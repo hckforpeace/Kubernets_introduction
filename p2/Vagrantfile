@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
   
   # First machine
   config.vm.define "pbeylounS" do |ctrl|
-    ctrl.vm.network "forwarded_port", guest: 80, host: 80
+    ctrl.vm.network "forwarded_port", guest: 80, host: 8080
     ctrl.vm.box = "ubuntu/jammy64"
     ctrl.vm.hostname = "controllerS"
     ctrl.vm.network "private_network", ip: "192.168.56.110"
