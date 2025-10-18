@@ -19,3 +19,16 @@ k3d cluster create my-cluster
 * Set up a Load Balancer
 * Configure Your kubeconfig
 
+### Check what you created :
+
+``` bash
+docker ps
+```
+
+``` bash 
+kubectl get nodes
+```
+
+``` bash
+kubectl get pods -n kube-system
+```
