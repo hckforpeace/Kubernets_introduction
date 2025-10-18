@@ -32,3 +32,46 @@ kubectl get nodes
 ``` bash
 kubectl get pods -n kube-system
 ```
+
+``` bash
+k3d cluster list
+```
+
+### Stop the clsuter without deleting it
+
+the command kubectl won't work
+``` bash
+k3d cluster stop 'cluster-name'
+```
+
+##
+
+
+``` bash
+k3d cluster start 'cluster-name'
+```
+
+##
+
+
+``` bash
+k3d cluster delete 'cluster-name'
+```
+
+## 
+
+``` bash  
+kubectl create namespace namespace-name 
+```
+
+### Apply a configuration to a namespace
+
+``` bash  
+kubectl apply -n namespace-name -f file.yml 
+```
+
+
+### Port forward 
+``` bash
+kubectl port-forward svc/service_name -n namespace hostport:serviceport
+```
