@@ -1,0 +1,15 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  config.vm.define "p3" do |p3|
+    p3.vm.provider "virtualbox" do |vb|
+      vb.name = "p3"    # This sets the VM’s actual name in VirtualBox
+      vb.gui = false
+    end
+
+    p3.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+    SHELL
+  end
+end
+
