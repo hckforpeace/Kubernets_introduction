@@ -54,5 +54,14 @@ argocd login localhost:8080 \
     --insecure
 
 # create application
-argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
+argocd app create  wil42 --repo  https://github.com/hckforpeace/Argocd_CI \
+	--path ./ \
+	--dest-server https://kubernetes.default.svc \
+	--dest-namespace dev \
+	--sync-policy automated \
+	--auto-prune \
+	--self-heal
+
+# sync application
+argocd app sync wil42
 
