@@ -54,7 +54,7 @@ argocd login localhost:8080 \
     --insecure
 
 # create application
-argocd app create  wil42 --repo  https://github.com/hckforpeace/Argocd_CI \
+argocd app create  wil-playground --repo  https://github.com/hckforpeace/Argocd_CI \
 	--path ./ \
 	--dest-server https://kubernetes.default.svc \
 	--dest-namespace dev \
@@ -62,6 +62,4 @@ argocd app create  wil42 --repo  https://github.com/hckforpeace/Argocd_CI \
 	--auto-prune \
 	--self-heal
 
-# sync application
-argocd app sync wil42
 
