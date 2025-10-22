@@ -39,6 +39,10 @@ kubectl create namespace argocd
 # install argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
+# sleep for 20 seconds
+echo "sleeping for 20 seconds ..."
+sleep 20
+
 # port forwarding
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 
