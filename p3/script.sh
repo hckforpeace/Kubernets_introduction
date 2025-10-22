@@ -15,12 +15,11 @@ echo \
 sudo apt-get update
 
 
+# instqll docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
-
 
 # install k3d
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
-
 
 # install kubectl
 curl -LO https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
@@ -34,11 +33,8 @@ k3d cluster create p3 -p "80:30080@server:0"
 kubectl create namespace dev
 kubectl create namespace argocd
 
-#
-
 # install argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-
 
 # waiting for service argocd-server to be ready
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=argocd-server -n argocd --timeout=300s
@@ -68,5 +64,3 @@ argocd app create  wil-playground --repo  https://github.com/hckforpeace/Argocd_
 	--sync-policy automated \
 	--auto-prune \
 	--self-heal
-
-
