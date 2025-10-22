@@ -27,6 +27,9 @@ curl -LO https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.t
 chmod +x kubectl
 mv kubectl /usr/local/bin
 
+# create cluter
+k3d cluster create p3
+
 # create namespace
 kubectl create namespace dev
 kubectl create namespace argocd
