@@ -43,6 +43,9 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 echo "sleeping for 20 seconds ..."
 sleep 20
 
+# waiting for service argocd-server to be ready
+kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=argocd-server -n argocd --timeout=300s
+
 # port forwarding
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 
