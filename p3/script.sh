@@ -28,7 +28,7 @@ chmod +x kubectl
 mv kubectl /usr/local/bin
 
 # create cluter
-k3d cluster create p3
+k3d cluster create p3 -p "80:30080@server:0"
 
 # create namespace
 kubectl create namespace dev
