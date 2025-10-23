@@ -57,7 +57,7 @@ argocd login localhost:8080 \
     --insecure
 
 # create application
-argocd app create  wil-playground --repo  https://github.com/hckforpeace/Argocd_CI \
+argocd app create  wil-playground --repo  https://github.com/hckforpeace/Argocd_pbeyloun \
 	--path ./ \
 	--dest-server https://kubernetes.default.svc \
 	--dest-namespace dev \
